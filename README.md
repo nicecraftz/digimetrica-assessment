@@ -18,9 +18,6 @@ Prima di eseguire qualsiasi modalità, assicurati di:
 - Installare le dipendenze Python:
     ```sh
     pip install -r requirements.txt
-    ```
-- Installare i browser Playwright (solo al primo utilizzo o dopo aggiornamenti):
-    ```sh
     playwright install
     ```
 
