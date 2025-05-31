@@ -1,2 +1,2 @@
-import urllib.parse
-from playwright.sync_api import Page, sync_playwright
+from urllib.parse import urlparse
+from playwright.sync_api import sync_playwright
