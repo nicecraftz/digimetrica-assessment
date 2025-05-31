@@ -11,8 +11,7 @@ def main():
         urls = set(file_data["urls"])
 
     for url in urls:
-        if photographer.is_valid_and_reachable(url):
-            photographer.screenshot(url, output_folder=RESOURCES_FOLDER)
+        photographer.screenshot(url, output_folder=RESOURCES_FOLDER)
 
 if __name__ == "__main__":
     main()
