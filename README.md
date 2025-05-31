@@ -1,82 +1,16 @@
 # Imago
 
-**Imago** è un progetto di assessment sviluppato per l’azienda Digimetrica.
+**Imago** è un progetto di assessment sviluppato per l’azienda Digimetrica, pensato per dimostrare competenze pratiche nello sviluppo software e nella gestione di applicazioni web.
 
-Si tratta di una piccola applicazione capace di catturare screenshot di pagine web a partire da un URL fornito in input.
+L’applicazione è progettata per catturare automaticamente screenshot di pagine web partendo da un semplice input: un URL fornito dall’utente. Può operare sia su singoli indirizzi, mostrando l’immagine direttamente nell’interfaccia, sia su liste multiple di URL, elaborandoli in blocco e restituendo un archivio `.zip` contenente tutte le immagini generate.
 
----
-
-## Documentazione
-
-Il progetto è organizzato in due sottosistemi, pensati per poter essere eseguiti anche senza l’uso di Docker.
+Grazie alla sua architettura leggera e alla scelta di Streamlit per la visualizzazione, Imago offre un’interfaccia semplice, pulita e immediata. È pensato per essere facilmente eseguibile tramite un container Docker, garantendo massima portabilità e riducendo a zero le configurazioni necessarie.
 
 ---
 
-### Requisiti comuni (senza Docker)
+### Utilizzo
 
-Prima di eseguire qualsiasi modalità, assicurati di:
-- Installare le dipendenze Python:
-    ```sh
-    pip install -r requirements.txt
-    playwright install
-    ```
-
----
-
-### Esecuzione senza visualizzazione (input JSON)
-
-Per eseguire solo l’elaborazione tramite il file `data.json`, imposta correttamente la variabile `PYTHONPATH` e avvia:
-
-- **Linux / macOS**
-    ```sh
-    export PYTHONPATH=$(pwd)
-    python3 main.py
-    ```
-
-- **Windows (cmd)**
-    ```batch
-    set PYTHONPATH=%cd%
-    python main.py
-    ```
-
-- **Windows (PowerShell)**
-    ```ps
-    $env:PYTHONPATH = (Get-Location)
-    python main.py
-    ```
-
----
-
-### Esecuzione con visualizzazione (interfaccia Streamlit)
-
-Per avviare l’interfaccia grafica Streamlit, sempre dopo aver configurato `PYTHONPATH`:
-
-- **Linux / macOS**
-    ```sh
-    export PYTHONPATH=$(pwd)
-    streamlit run visualization/streamlit_app.py
-    ```
-
-- **Windows (cmd)**
-    ```cmd
-    set PYTHONPATH=%cd%
-    streamlit run visualization/streamlit_app.py
-    ```
-
-- **Windows (PowerShell)**
-    ```powershell
-    $env:PYTHONPATH = (Get-Location)
-    streamlit run visualization/streamlit_app.py
-    ```
-
-⚠ **Nota:**
-L’esportazione della variabile `PYTHONPATH` è richiesta solo una volta per sessione di terminale, fino alla sua chiusura.
-
----
-
-### Utilizzo tramite Docker
-
-Per evitare configurazioni manuali e sfruttare un ambiente già pronto, puoi utilizzare Docker:
+Per evitare configurazioni manuali e sfruttare un ambiente già pronto, utilizza Docker:
 
 ```sh
 docker build -t imago .
